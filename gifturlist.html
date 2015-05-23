@@ -1,0 +1,55 @@
+<head>
+  <title>GiftUrList</title>
+</head>
+
+<body>
+  <div class="container">
+
+      <header>
+          <h1>GiftUrList</h1>
+          <img src="/gift_icon.png" alt="GiftUrList" class="icon">
+          <p class="quote">The only gift I have to give, is the ability to receive.</p>
+          <p class="quote">If giving is a gift, and it surely is, then my gift to you is to allow you to give to me.</p>
+          <p class="quote-author">― Jarod Kintz, The Titanic would never have sunk if it were made out of a sink.</p>
+      </header>
+
+      {{> loginButtons}}
+
+
+      {{#if currentUser}}
+          <h2>My Wish List</h2>
+          <form class="new-gift">
+              <input type="text" id="text" placeholder="Add another gift to your list!" />
+              <!--<input type="text" id="giftDesc" placeholder="Add more description for your gift" />-->
+              <!--<input type="url" id="giftLink" placeholder="Paste a link to send fiends to a website" />-->
+              <!--<button type="submit" id="giftSubmit">Put it on my list!</button>-->
+          </form>
+          <ul>
+              {{#each myGifts}}
+                {{>gifts}}
+              {{/each}}
+          </ul>
+
+
+          <h2>My Friends & Family</h2>
+
+
+          <h2>Create a Group</h2>
+          <form class="create-group">
+              <input type="text" id="newGroupName" placeholder="Type the name of the new group" />
+              <input type="password" id="newGroupPassword" placeholder="Give your new group a password" />
+              <button class="submit-add-group" name="addGroup">Create Group</button>
+          </form>
+
+      {{/if}}
+
+  </div>
+</body>
+
+<template name="gifts">
+  <li>
+    <button class="delete">&times;</button>
+    <span class="text">{{name}}  -  {{gift}}</span>
+  </li>
+</template>
+

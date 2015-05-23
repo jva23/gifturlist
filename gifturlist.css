@@ -1,0 +1,68 @@
+/* CSS declarations go here */
+body {
+    background-color: #BF1E2E;
+    background-attachment: fixed;
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.icon {
+    width:150px;
+    height:150px;
+}
+
+.container {
+    background-color: #BF1E2E;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100%;
+    align-content: center;
+}
+
+.delete {
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 2em;
+    border: none;
+    position: relative;
+    color: white;
+}
+
+
+li {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #eee solid 1px;
+    text-align: left;
+}
+
+li .text {
+    margin-left: 10px;
+}
+
+li.checked {
+    color: #888;
+}
+
+li.checked .text {
+    text-decoration: line-through;
+}
+
+.quote {
+    font-size: small;
+}
+
+.quote-author {
+    font-size: small;
+    font-style: italic;
+}
