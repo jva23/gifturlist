@@ -13,13 +13,14 @@
           <p class="quote-author">― Jarod Kintz, The Titanic would never have sunk if it were made out of a sink.</p>
       </header>
 
-      {{> loginButtons}}
-
+      <div class="login-container">
+        {{> loginButtons}}
+      </div>
 
       {{#if currentUser}}
           <h2>My Wish List</h2>
           <form class="new-gift">
-              <input type="text" id="text" placeholder="Add another gift to your list!" />
+              <input type="text" id="text" placeholder="Add a gift to your list!" />
               <!--<input type="text" id="giftDesc" placeholder="Add more description for your gift" />-->
               <!--<input type="url" id="giftLink" placeholder="Paste a link to send fiends to a website" />-->
               <!--<button type="submit" id="giftSubmit">Put it on my list!</button>-->
@@ -36,9 +37,16 @@
 
           <h2>Create a Group</h2>
           <form class="create-group">
-              <input type="text" id="newGroupName" placeholder="Type the name of the new group" />
-              <input type="password" id="newGroupPassword" placeholder="Give your new group a password" />
-              <button class="submit-add-group" name="addGroup">Create Group</button>
+              <input type="text" id="createGroupName" placeholder="Give your new group a name." />
+              <input type="password" id="createGroupPassword" placeholder="Give your new group a password." />
+              <button class="submit-create-group" name="createGroup">Create Group</button>
+          </form>
+
+          <h2>Join a Group</h2>
+          <form class="join-group">
+              <input type="text" id="joinGroupName" placeholder="What is the group name?" />
+              <input type="password" id="joinGroupPassword" placeholder="What is the group password?" />
+              <button class="submit-join-group" name="joinGroup">Join Group</button>
           </form>
 
       {{/if}}
@@ -49,7 +57,7 @@
 <template name="gifts">
   <li>
     <button class="delete">&times;</button>
-    <span class="text">{{name}}  -  {{gift}}</span>
+    <span class="text">{{gift}}</span>
   </li>
 </template>
 
