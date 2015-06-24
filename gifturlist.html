@@ -8,56 +8,89 @@
       <header>
           <h1>GiftUrList</h1>
           <img src="/gift_icon.png" alt="GiftUrList" class="icon">
-          <p class="quote">The only gift I have to give, is the ability to receive.</p>
-          <p class="quote">If giving is a gift, and it surely is, then my gift to you is to allow you to give to me.</p>
-          <p class="quote-author">― Jarod Kintz, The Titanic would never have sunk if it were made out of a sink.</p>
       </header>
+
+      <div class="section-container">
+          <p class="text">The only gift I have to give, is the ability to receive.</p>
+          <p class="text">If giving is a gift, and it surely is, then my gift to you is to allow you to give to me.</p>
+          <p class="author">― Jarod Kintz</p>
+      </div>
 
       <div class="login-container">
         {{> loginButtons}}
       </div>
 
       {{#if currentUser}}
-          <h2>My Wish List</h2>
-          <form class="new-gift">
-              <input type="text" id="text" placeholder="Add a gift to your list!" />
-              <!--<input type="text" id="giftDesc" placeholder="Add more description for your gift" />-->
-              <!--<input type="url" id="giftLink" placeholder="Paste a link to send fiends to a website" />-->
-              <!--<button type="submit" id="giftSubmit">Put it on my list!</button>-->
-          </form>
-          <ul>
-              {{#each myGifts}}
-                {{>gifts}}
-              {{/each}}
-          </ul>
+          <div class="section-container">
+              <h2>My Wish List</h2>
+              <form class="new-gift">
+                  <input type="text" id="text" placeholder="Add a gift to your list!" />
+                  <!--<input type="text" id="giftDesc" placeholder="Add more description for your gift" />-->
+                  <!--<input type="url" id="giftLink" placeholder="Paste a link to send fiends to a website" />-->
+                  <!--<button type="submit" id="giftSubmit">Put it on my list!</button>-->
+              </form>
+              <ul>
+                  {{#each myGifts}}
+                    {{>gifts}}
+                  {{/each}}
+              </ul>
+          </div>
 
+          <div class="section-container">
+              {{>myGroups}}
+          </div>
 
-          <h2>My Friends & Family</h2>
+          <div class="section-container">
+              {{>createGroup}}
+          </div>
 
-
-          <h2>Create a Group</h2>
-          <form class="create-group">
-              <input type="text" id="createGroupName" placeholder="Give your new group a name." />
-              <input type="password" id="createGroupPassword" placeholder="Give your new group a password." />
-              <button class="submit-create-group" name="createGroup">Create Group</button>
-          </form>
-
-          <h2>Join a Group</h2>
-          <form class="join-group">
-              <input type="text" id="joinGroupName" placeholder="What is the group name?" />
-              <input type="password" id="joinGroupPassword" placeholder="What is the group password?" />
-              <button class="submit-join-group" name="joinGroup">Join Group</button>
-          </form>
+          <div class="section-container">
+              {{>joinGroup}}
+          </div>
 
       {{/if}}
 
   </div>
 </body>
 
+
 <template name="gifts">
   <li>
     <button class="delete">&times;</button>
     <span class="text">{{gift}}</span>
   </li>
+</template>
+
+
+<template name="myGroups">
+    <h2>My Groups</h2>
+</template>
+
+
+<template name="createGroup">
+    {{#if showCreateGroup}}
+        <p class="text">To create a new group, provide a group name and a password here and click submit.</p>
+        <form class="create-group">
+            <input type="text" id="createGroupName" placeholder="Give your new group a name." />
+            <input type="password" id="createGroupPassword" placeholder="Give your new group a password." />
+            <button class="submit-create-group" name="createGroup">Create It!</button>
+        </form>
+    {{else}}
+        <button class="toggle-create-group" name="toggleCreateGroup">Create a Group</button>
+    {{/if}}
+</template>
+
+
+<template name="joinGroup">
+    {{#if showJoinGroup}}
+        <p class="text">To join an active group, provide the group name and password here and click submit.</p>
+        <form class="join-group">
+            <input type="text" id="joinGroupName" placeholder="What is the group name?" />
+            <input type="password" id="joinGroupPassword" placeholder="What is the group password?" />
+            <button class="submit-join-group" name="joinGroup">Join In!</button>
+        </form>
+    {{else}}
+        <button class="toggle-join-group" name="toggleJoinGroup">Join a Group</button>
+    {{/if}}
 </template>
 
