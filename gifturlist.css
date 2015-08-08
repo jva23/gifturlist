@@ -1,7 +1,6 @@
 /* CSS declarations go here */
 body {
     background-color: #BF1E2E;
-    background-attachment: fixed;
     color: white;
     position: absolute;
     top: 0;
@@ -14,27 +13,63 @@ body {
     text-align: center;
 }
 
-header {
-    margin-bottom: 30px;
-}
-
-h1 {
+.h1-in {
     font-size: 60px;
+    display: inline;
 }
 
-h2 {
-    border-bottom: solid medium white;
+.h1-out {
+    font-size: 80px;
 }
 
 .login-container {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
+    color: white;
 }
 
-.icon {
-    width:80px;
-    height:80px;
+.sign-in-text-facebook{
+    position:relative;
+}
+
+.sign-in-text-facebook:before {
+    font-family: FontAwesome;
+    content: "\f26e"; /*<--- this is your text. You can also use UTF-8 character codes as I do here*/
+    display: inline-block;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+
+.btn:hover {
+    color: white;
+    background-color: #BF1E2E;
+    border: 1px solid white;
+}
+
+.btn {
+    font-size: 1em;
+    color: #BF1E2E;
+    background-color: white;
+    border: 1px solid #BF1E2E;
+    font-weight: bold;
+}
+
+.btn-login {
+    font-size: 2em;
+}
+
+.icon-lg {
+    font-size: 10em;
+}
+
+.icon-md {
+    font-size: 4em;
+}
+
+.icon-sm {
+    font-size: 1em;
 }
 
 .section-container {
@@ -81,10 +116,10 @@ li.checked .text {
 }
 
 .quote {
-    font-size: small;
+    font-size: medium;
 }
 
 .quote-author {
-    font-size: small;
+    font-size: medium;
     font-style: italic;
 }

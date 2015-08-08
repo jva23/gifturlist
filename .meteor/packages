@@ -8,4 +8,9 @@ meteor-platform
 autopublish
 insecure
 accounts-password
-accounts-ui
+accounts-google
+alanning:roles
+natestrauser:font-awesome
+accounts-facebook
+accounts-ui-unstyled
+service-configuration
