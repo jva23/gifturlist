@@ -82,7 +82,7 @@ if (Meteor.isClient) {
     };
 
     Accounts.ui.config({
-        passwordSignupFields: 'EMAIL_ONLY'
+        passwordSignupFields: 'USERNAME_AND_EMAIL'
     });
 
 }
